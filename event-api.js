@@ -18,13 +18,13 @@ for (let i = 0; i < gps.length; i++) {
   }
 }
 
-window.addEventListener("gamepadconnected", (e) => {
+window.ongamepadconnected = (connectEvent) => {
   const connectedGamepads = navigator.getGamepads();
-  const gamepad = connectedGamepads[e.gamepad.index];
+  const gamepad = connectedGamepads[connectEvent.gamepad.index];
 
   log(`🎮 Gamepad connected: ${gamepad.id} (index: ${gamepad.index})`);
 
-  gamepad.onrawgamepadinputchange = (changeEvent) => {
+  window.onrawgamepadinputchange = (changeEvent) => {
     const snapshot = changeEvent.gamepadSnapshot;
     const liveGamepad = changeEvent.target;
 
@@ -52,9 +52,9 @@ window.addEventListener("gamepadconnected", (e) => {
       log(`Button ${buttonIndex} released → snapshot: ${snap}, live: ${live}`);
     }
   };
-});
+};
 
-window.addEventListener("gamepaddisconnected", (e) => {
+window.ongamepaddisconnected = (e) => {
   log(`❌ Gamepad disconnected: ${e.gamepad.id} (index: ${e.gamepad.index})`);
-});
+};
 
