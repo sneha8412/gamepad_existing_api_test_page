@@ -18,9 +18,9 @@ for (let i = 0; i < gps.length; i++) {
   }
 }
 
-window.ongamepadconnected = (connectEvent) => {
+window.addEventListener("gamepadconnected", (e) => {
   const connectedGamepads = navigator.getGamepads();
-  const gamepad = connectedGamepads[connectEvent.gamepad.index];
+  const gamepad = connectedGamepads[e.gamepad.index];
 
   log(`🎮 Gamepad connected: ${gamepad.id} (index: ${gamepad.index})`);
 
@@ -54,7 +54,7 @@ window.ongamepadconnected = (connectEvent) => {
   };
 };
 
-window.ongamepaddisconnected = (e) => {
+window.addEventListener("gamepaddisconnected", (e) => {
   log(`❌ Gamepad disconnected: ${e.gamepad.id} (index: ${e.gamepad.index})`);
 };
 
