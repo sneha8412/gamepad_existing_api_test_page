@@ -52,9 +52,9 @@ window.addEventListener("gamepadconnected", (e) => {
       log(`Button ${buttonIndex} released → snapshot: ${snap}, live: ${live}`);
     }
   };
-};
+});
 
 window.addEventListener("gamepaddisconnected", (e) => {
   log(`❌ Gamepad disconnected: ${e.gamepad.id} (index: ${e.gamepad.index})`);
-};
+});
 
