@@ -6,7 +6,7 @@ function containsAnyPhraseCI(text, phrases) {
 }
  
 window.addEventListener("gamepadconnected", (event) => {
-  if(containsAnyPhraseCI(event.gamepad.id, ["Xbox"])) {
+  if(containsAnyPhraseCI(event.gamepad.id, ["Xbox", "Wireless"])) {
     gamepadIndex = event.gamepad.index;
     console.log(`Gamepad connected at index ${gamepadIndex}: ${event.gamepad.id}`);
   }
