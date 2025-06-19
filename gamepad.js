@@ -1,8 +1,15 @@
 let gamepadIndex = null;
 
+function containsAnyPhraseCI(text, phrases) {
+  const lowerText = text.toLowerCase();
+  return phrases.some(phrase => lowerText.includes(phrase.toLowerCase()));
+}
+ 
 window.addEventListener("gamepadconnected", (event) => {
-  gamepadIndex = event.gamepad.index;
-  console.log(`Gamepad connected at index ${gamepadIndex}: ${event.gamepad.id}`);
+  if(containsAnyPhraseCI(event.gamepad.id, ["Xbox"]) {
+    gamepadIndex = event.gamepad.index;
+    console.log(`Gamepad connected at index ${gamepadIndex}: ${event.gamepad.id}`);
+  }
 });
 
 window.addEventListener("gamepaddisconnected", () => {
