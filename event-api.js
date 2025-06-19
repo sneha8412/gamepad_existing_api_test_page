@@ -6,6 +6,18 @@ function log(msg) {
   console.log(msg); // Optional console output
 }
 
+// ✅ Log script load and initial state
+log("✅ Test page script loaded.");
+
+const gps = navigator.getGamepads();
+log(`Initial call: navigator.getGamepads() = ${gps.length} slots`);
+for (let i = 0; i < gps.length; i++) {
+  const gp = gps[i];
+  if (gp) {
+    log(`→ Gamepad detected in slot ${i}: ${gp.id}`);
+  }
+}
+
 window.ongamepadconnected = (connectEvent) => {
   const connectedGamepads = navigator.getGamepads();
   const gamepad = connectedGamepads[connectEvent.gamepad.index];
@@ -45,3 +57,4 @@ window.ongamepadconnected = (connectEvent) => {
 window.ongamepaddisconnected = (e) => {
   log(`❌ Gamepad disconnected: ${e.gamepad.id} (index: ${e.gamepad.index})`);
 };
+
