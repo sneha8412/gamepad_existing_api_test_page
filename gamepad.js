@@ -9,6 +9,29 @@ window.addEventListener("gamepadconnected", (event) => {
   if(containsAnyPhraseCI(event.gamepad.id, ["Xbox", "Wireless"])) {
     gamepadIndex = event.gamepad.index;
     console.log(`Gamepad connected at index ${gamepadIndex}: ${event.gamepad.id}`);
+
+    console.log(
+      "Gamepad connected at index %d: %s. %d buttons, %d axes.",
+      event.gamepad.index,
+      event.gamepad.id,
+      event.gamepad.buttons.length,
+      event.gamepad.axes.length,
+  );
+  }
+});
+
+window.addEventListener("gamepadrawinputchanged", (event) => {
+  if(containsAnyPhraseCI(event.gamepad.id, ["Xbox", "Wireless"])) {
+    gamepadIndex = event.gamepad.index;
+    console.log(`Gamepad input changed at index ${gamepadIndex}: ${event.gamepad.id}`);
+
+    console.log(
+      "Gamepad connected at index %d: %s. %d buttons, %d axes.",
+      event.gamepad.index,
+      event.gamepad.id,
+      event.gamepad.buttons.length,
+      event.gamepad.axes.length,
+  );
   }
 });
 
