@@ -25,8 +25,8 @@ window.addEventListener("gamepadrawinputchanged", (event) => {
     gamepadIndex = event.gamepadSnapshot.index;
     console.log(`Gamepad input changed at index ${gamepadIndex}: ${event.gamepadSnapshot.id}`);
 
-    console.log("Event payload" + event)
-    
+    console.log("Event payload: " + JSON.stringify(event, null, 2))
+
     console.log(
       "Gamepad connected at index %d: %s. %d buttons, %d axes.",
       event.gamepadSnapshot.index,
