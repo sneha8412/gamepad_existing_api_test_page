@@ -125,7 +125,7 @@ window.addEventListener("gamepadrawinputchanged", (event) => {
   }
 });
 
-window.addEventListener("gamepaddisconnected", () => {
+window.addEventListener("gamepaddisconnected", (event) => {
   console.log("Gamepad disconnected");
   gamepadIndex = null;
 
@@ -134,6 +134,14 @@ window.addEventListener("gamepaddisconnected", () => {
   if (rawOutput) {
     rawOutput.textContent = "";
   }
+
+  console.log(`Gamepad disconnected at index ${gamepadIndex}: ${event.gamepad.id}`);
+
+    console.log(
+      "Gamepad disconnected at index %d: ",
+      event.gamepad.index,
+      event.gamepad.id
+    );
 });
 
 function updateGamepad() {
