@@ -89,29 +89,6 @@ window.addEventListener("gamepadconnected", (event) => {
   }
 });
 
-// window.addEventListener("gamepadrawinputchanged", (event) => {
-//   if (containsAnyPhraseCI(event.gamepadSnapshot.id, ["Xbox", "Wireless"])) {
-//     gamepadIndex = event.gamepadSnapshot.index;
-//     console.log(`Gamepad input changed at index ${gamepadIndex}: ${event.gamepadSnapshot.id}`);
-
-//     // Show payload on page
-//     const rawOutput = document.getElementById("rawEventOutput");
-//     if (rawOutput) {
-//       rawOutput.textContent = "Event payload:\n" + JSON.stringify(event, null, 2);
-//     }
-
-//     console.log("Event payload: " + JSON.stringify(event, null, 2));
-
-//     console.log(
-//       "Gamepad connected at index %d: %s. %d buttons, %d axes.",
-//       event.gamepadSnapshot.index,
-//       event.gamepadSnapshot.id,
-//       event.gamepadSnapshot.buttons.length,
-//       event.gamepadSnapshot.axes.length,
-//     );
-//   }
-// });
-
 window.addEventListener("gamepadrawinputchanged", (event) => {
   if (containsAnyPhraseCI(event.gamepadSnapshot.id, ["Xbox", "Wireless"])) {
     gamepadIndex = event.gamepadSnapshot.index;
@@ -182,4 +159,4 @@ function updateGamepad() {
   requestAnimationFrame(updateGamepad);
 }
 
-requestAnimationFrame(updateGamepad);
+//requestAnimationFrame(updateGamepad);
