@@ -167,4 +167,4 @@ function updateGamepad() {
   requestAnimationFrame(updateGamepad);
 }
 
-requestAnimationFrame(updateGamepad);
+//requestAnimationFrame(updateGamepad);
